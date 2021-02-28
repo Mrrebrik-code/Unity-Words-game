@@ -11,10 +11,12 @@ public class Latter : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
 	private RectTransform _rectTransform = new RectTransform();
 	[SerializeField] Canvas _canvas;
 	private CanvasGroup _canvaseGroupe;
-	[SerializeField] GameObject _panel;
+	public GameObject _panel;
+	public Vector2 StartPosition;
 
 	private void Awake()
 	{
+		StartPosition = GetComponent<RectTransform>().anchoredPosition;
 		_rectTransform = GetComponent<RectTransform>();
 		_canvaseGroupe = GetComponent<CanvasGroup>();
 	}

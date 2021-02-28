@@ -13,9 +13,14 @@ public class Cells : MonoBehaviour, IDropHandler
 	{
 		if (_latter == eventData.pointerDrag.GetComponent<Latter>().CurrentLatter)
 		{
-			eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+			eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
+			GetComponent<RectTransform>().anchoredPosition;
 			eventData.pointerDrag.GetComponent<Latter>().enabled = false;
 			_gameManager.Succes++;
+		}
+		else
+		{
+			eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = eventData.pointerDrag.GetComponent<Latter>().StartPosition;
 		}
 	}
 
